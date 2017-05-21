@@ -1,12 +1,17 @@
 francisw@access.cims.nyu.edu
 
-crunchy1.cims.nyu.edu
-crunchy3.cims.nyu.edu
+crunchy1.cims.nyu.edu f_b2
+crunchy3.cims.nyu.edu f_b3
 crunchy4.cims.nyu.edu
 crunchy5.cims.nyu.edu
 crunchy6.cims.nyu.edu
-snappy1.cims.nyu.edu
+snappy1.cims.nyu.edu ab19
 snappy2.cims.nyu.edu f_b1
-snappy3.cims.nyu.edu
-snappy4.cims.nyu.edu
+snappy3.cims.nyu.edu ab21
+snappy4.cims.nyu.edu ab22
 snappy5.cims.nyu.edu
+
+1 snappy2
+2 crunchy1
+3 crunchy3
+4_cluster_1-7
