@@ -25803,3 +25803,38 @@
 2017-05-21 06:20:44 INFO  ren3 [KDTreeBase] Constructing a SAH kd-tree (65596 primitives) ..
 2017-05-21 06:20:44 INFO  ren3 [KDTreeBase] Finished -- took 753 ms.
 2017-05-21 06:20:44 INFO  ren3 [SamplingIntegrator] Starting render job (1080x720, 8000 samples, 20 cores, SSE2 enabled) ..
+2017-05-21 08:45:14 WARN  wrk14[ImageBlock] Invalid sample value : [-nan, -nan, -nan, 1, 1]
+2017-05-21 09:36:16 INFO  ren3 [RenderJob] Render time: 3.2591h
+2017-05-21 09:36:17 INFO  ren3 [LDRFilm] Writing image to "/home/francisw/qub/scenesNYU/batch_21/animation_528.png" ..
+2017-05-21 09:36:17 INFO  main [statistics.cpp:142] Statistics:
+------------------------------------------------------------
+ * Loaded plugins :
+    -  plugins/area.so [Area light]
+    -  plugins/bitmap.so [Bitmap texture]
+    -  plugins/checkerboard.so [Checkerboard texture]
+    -  plugins/conductor.so [Smooth conductor]
+    -  plugins/dielectric.so [Smooth dielectric BSDF]
+    -  plugins/diffuse.so [Smooth diffuse BRDF]
+    -  plugins/gaussian.so [Gaussian reconstruction filter]
+    -  plugins/independent.so [Independent sampler]
+    -  plugins/instance.so [Instanced geometry]
+    -  plugins/lanczos.so [Lanczos Sinc filter]
+    -  plugins/ldrfilm.so [Low dynamic range film]
+    -  plugins/obj.so [OBJ triangle mesh loader]
+    -  plugins/opath.so [Orbifold MI path tracer]
+    -  plugins/perspective.so [Perspective camera]
+    -  plugins/phong.so [Modified Phong BRDF]
+    -  plugins/plastic.so [Smooth plastic BRDF]
+    -  plugins/roughconductor.so [Rough conductor BRDF]
+    -  plugins/shapegroup.so [Grouped geometry for instancing]
+
+  * General :
+    -  Normal rays traced : 37.510 G
+    -  Shadow rays traced : 14.277 G
+
+  * Path tracer :
+    -  Average path length : 6.03 (37.50 G / 6.22 G)
+
+  * Texture system :
+    -  Cumulative MIP map memory allocations : 12.527 MiB
+------------------------------------------------------------
