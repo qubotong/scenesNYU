@@ -32250,3 +32250,4 @@
 2017-05-21 05:41:33 INFO  ren4 [KDTreeBase] Constructing a SAH kd-tree (65596 primitives) ..
 2017-05-21 05:41:35 INFO  ren4 [KDTreeBase] Finished -- took 1735 ms.
 2017-05-21 05:41:35 INFO  ren4 [SamplingIntegrator] Starting render job (1080x720, 8000 samples, 64 cores, SSE2 enabled) ..
+2017-05-21 06:23:24 WARN  wrk50[ImageBlock] Invalid sample value : [-nan, -nan, -nan, 1, 1]
