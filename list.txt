@@ -1,7 +1,10 @@
+francisw@access.cims.nyu.edu
+
 crunchy1.cims.nyu.edu
 crunchy3.cims.nyu.edu
 crunchy4.cims.nyu.edu
 crunchy5.cims.nyu.edu
+crunchy6.cims.nyu.edu
 snappy1.cims.nyu.edu
 snappy2.cims.nyu.edu
 snappy3.cims.nyu.edu
