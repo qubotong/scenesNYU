@@ -14,4 +14,8 @@ snappy5.cims.nyu.edu
 1 snappy2
 2 crunchy1
 3 crunchy3
-4_cluster_1-7
+4 cluster_1-7
+5 cluster_2-11
+6 cluster_2-2
+7 cluster_2-3
+8 cluster_2-7
