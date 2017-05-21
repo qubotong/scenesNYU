@@ -6,7 +6,7 @@ crunchy4.cims.nyu.edu
 crunchy5.cims.nyu.edu
 crunchy6.cims.nyu.edu
 snappy1.cims.nyu.edu
-snappy2.cims.nyu.edu
+snappy2.cims.nyu.edu f_b1
 snappy3.cims.nyu.edu
 snappy4.cims.nyu.edu
 snappy5.cims.nyu.edu
