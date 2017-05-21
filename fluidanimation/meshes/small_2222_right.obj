@@ -1,0 +1,22 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 20.05.2017 22:23:14
+
+#
+# object right2222
+#
+
+v  0.0000 0.0000 -0.0000
+v  0.0000 56.0000 -0.0000
+v  0.0000 56.0000 56.0000
+v  0.0000 0.0000 56.0000
+# 4 vertices
+
+vn 1.0000 0.0000 -0.0000
+# 1 vertex normals
+
+g right2222
+s off
+f 1//1 2//1 3//1 
+f 3//1 4//1 1//1 
+# 2 faces
+
