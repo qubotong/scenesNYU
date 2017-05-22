@@ -6462,3 +6462,37 @@
 2017-05-21 18:42:51 INFO  ren0 [KDTreeBase] Constructing a SAH kd-tree (65596 primitives) ..
 2017-05-21 18:42:52 INFO  ren0 [KDTreeBase] Finished -- took 768 ms.
 2017-05-21 18:42:52 INFO  ren0 [SamplingIntegrator] Starting render job (1080x720, 8000 samples, 20 cores, SSE2 enabled) ..
+2017-05-21 21:04:27 INFO  ren0 [RenderJob] Render time: 2.3599h
+2017-05-21 21:04:27 INFO  ren0 [LDRFilm] Writing image to "/home/francisw/qub/scenesNYU/diceanimation/batch21/animation_524.png" ..
+2017-05-21 21:04:27 INFO  main [statistics.cpp:142] Statistics:
+------------------------------------------------------------
+ * Loaded plugins :
+    -  plugins/area.so [Area light]
+    -  plugins/bitmap.so [Bitmap texture]
+    -  plugins/checkerboard.so [Checkerboard texture]
+    -  plugins/conductor.so [Smooth conductor]
+    -  plugins/dielectric.so [Smooth dielectric BSDF]
+    -  plugins/diffuse.so [Smooth diffuse BRDF]
+    -  plugins/gaussian.so [Gaussian reconstruction filter]
+    -  plugins/independent.so [Independent sampler]
+    -  plugins/instance.so [Instanced geometry]
+    -  plugins/lanczos.so [Lanczos Sinc filter]
+    -  plugins/ldrfilm.so [Low dynamic range film]
+    -  plugins/obj.so [OBJ triangle mesh loader]
+    -  plugins/opath.so [Orbifold MI path tracer]
+    -  plugins/perspective.so [Perspective camera]
+    -  plugins/phong.so [Modified Phong BRDF]
+    -  plugins/plastic.so [Smooth plastic BRDF]
+    -  plugins/roughconductor.so [Rough conductor BRDF]
+    -  plugins/shapegroup.so [Grouped geometry for instancing]
+
+  * General :
+    -  Normal rays traced : 37.510 G
+    -  Shadow rays traced : 14.402 G
+
+  * Path tracer :
+    -  Average path length : 6.03 (37.50 G / 6.22 G)
+
+  * Texture system :
+    -  Cumulative MIP map memory allocations : 12.527 MiB
+------------------------------------------------------------
