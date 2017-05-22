@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene version="0.5.0">
+	<!-- 	<integrator type="erpt">
+		<boolean name="causticPerturbation" value="false"/>
+		<boolean name="lensPerturbation" value="false"/>
+		<boolean name="manifoldPerturbation" value="true"/>
+		<integer name="maxChains" value="200"/>
+		<boolean name="multiChainPerturbation" value="false"/>
+		<float name="numChains" value="36"/>
+	</integrator> -->
+<!-- 	<integrator type="path"/> -->
+	<integrator type="opath">
+          <string name="otype" value="*2222"/>
+          <spectrum name="k1" value="0.7"/>
+          <spectrum name="k2" value="0.7"/>
+          <spectrum name="k3" value="0.7"/>
+          <spectrum name="k4" value="0.7"/>
+		  <spectrum name="eta1" value="0.1"/>
+          <spectrum name="eta2" value="0.1"/>
+          <spectrum name="eta3" value="0.1"/>
+          <spectrum name="eta4" value="0.1"/>
+    </integrator>
+	<!-- 	<emitter type="constant">
+		<spectrum name="radiance" value="0.5"/>
+	</emitter> -->
+
+	<sensor type="perspective">
+		<float name="farClip" value="10000"/>
+		<float name="fov" value="75"/>
+		<string name="fovAxis" value="x"/>
+		<float name="nearClip" value="100"/>
+
+		<animation name="toWorld">
+			<transform time="0">
+				<lookat target="280, 250, 500" origin="280, 250, 10" up="0, 1, 0"/>
+			</transform>
+			<transform time="30">
+				<lookat target="500, 250, 180" origin="280, 250, 10" up="0, 1, 0"/>
+			</transform>
+			<transform time="90">
+				<lookat target="100, 250, 180" origin="280, 250, 10" up="0, 1, 0"/>
+			</transform>
+			<transform time="120">
+				<lookat target="280, 250, 500" origin="280, 250, 10" up="0, 1, 0"/>
+			</transform>
+		</animation>
+		
+		<sampler type="independent">
+			<integer name="sampleCount" value="512"/>
+		</sampler>
+
+		<film type="hdrfilm">
+			<integer name="height" value="512"/>
+			<integer name="width" value="512"/>
+
+			<rfilter type="gaussian"/>
+		</film>
+		
+		<float name ="shutterOpen" value="0"/>
+		<float name ="shutterClose" value="0"/>
+	</sensor>
+	<!--
+        #########################
+        #  Material definitions #
+        #########################
+    !-->
+
+	<bsdf type="diffuse" id="gray">
+		<spectrum name="reflectance" value="400:0.1, 500:0.1, 600:0.1, 700:0.1"/>
+	</bsdf>
+
+	<bsdf type="diffuse" id="gray1">
+		<srgb name="reflectance" value="#6d6d6d"/>
+	</bsdf>
+
+	<bsdf type="diffuse" id="checker">
+		<spectrum name="reflectance" value="400:0.1, 500:0.1, 600:0.1, 700:0.1"/>
+
+		<texture name="diffuseReflectance" type="bitmap">
+			<string name="filename" value="meshes/checkerboard.png"/>
+		</texture>
+	</bsdf>
+
+	<bsdf type="diffuse" id="checkerboard">
+		<texture name="reflectance" type="checkerboard">
+			<rgb name="color0" value="0.4"/>
+			<rgb name="color1" value="0.2"/>
+			<float name="uscale" value="10.0"/>
+			<float name="vscale" value="10.0"/>
+			<float name="uoffset" value="0.0"/>
+			<float name="voffset" value="0.0"/>
+		</texture>
+	</bsdf>
+
+	<bsdf type="diffuse" id="bricks">
+		<spectrum name="reflectance" value="400:0.3, 500:0.3, 600:0.3, 700:0.3"/>
+
+		<texture name="diffuseReflectance" type="bitmap">
+			<string name="filename" value="meshes/bricks.png"/>
+		</texture>
+	</bsdf>
+
+	<bsdf type="diffuse" id="floor">
+		<texture name="diffuseReflectance" type="bitmap">
+			<string name="filename" value="meshes/floor1.jpg"/>
+		</texture>
+	</bsdf>
+
+	<bsdf type="diffuse" id="masonry">
+		<spectrum name="reflectance" value="400:0.3, 500:0.3, 600:0.3, 700:0.3"/>
+
+		<texture name="diffuseReflectance" type="bitmap">
+			<string name="filename" value="meshes/masonry-wall-texture.png"/>
+			<float name="uscale" value="3.0"/>
+			<float name="vscale" value="3.0"/>
+			<float name="uoffset" value="0.0"/>
+			<float name="voffset" value="0.0"/>
+		</texture>
+	</bsdf>
+
+	<bsdf type="conductor" id="mirror">
+		<string name="material" value="Ag"/>
+	</bsdf>
+
+	<bsdf type="conductor" id="mirror2">
+		<spectrum name="eta" value="0.1"/>
+		<spectrum name="k" value="0.7"/>
+	</bsdf>
+
+	<bsdf type="dielectric" id="glass">
+		<float name="extIOR" value="1.0"/>
+		<float name="intIOR" value="1.5"/>
+	</bsdf>
+
+	<bsdf type="diffuse" id="light">
+		<spectrum name="reflectance" value="400:0.78, 500:0.78, 600:0.78, 700:0.78"/>
+	</bsdf>
+	<!--
+        ###############################
+        #  Scene Geometry Definitions #
+        ###############################
+    !-->
+
+	<shape type="shapegroup" id="scene">
+		<shape type="obj">
+			<string name="filename" value="meshes/cbox_floor.obj"/>
+			<!-- <ref id="checkerboard"/> -->
+
+			<ref id="floor"/>
+		</shape>
+
+		<shape type="obj">
+			<string name="filename" value="meshes/cbox_ceiling.obj"/>
+
+			<ref id="masonry"/>
+		</shape>
+
+<!-- 		<shape type="obj">
+			<string name="filename" value="meshes/cbox_front.obj"/>
+
+			<ref id="mirror2"/>
+		</shape>
+
+		<shape type="obj">
+			<string name="filename" value="meshes/cbox_back.obj"/>
+
+			<ref id="mirror2"/>
+		</shape>
+
+		<shape type="obj">
+			<string name="filename" value="meshes/cbox_redwall.obj"/>
+
+			<ref id="mirror2"/>
+		</shape>
+
+		<shape type="obj">
+			<string name="filename" value="meshes/cbox_greenwall.obj"/>
+
+			<ref id="mirror2"/>
+		</shape> -->
+
+		<shape type="obj">
+			<string name="filename" value="meshes/table.obj"/>
+		</shape>
+
+		<shape type="obj">
+			<string name="filename" value="meshes/studio_light.obj"/>
+		</shape>
+
+		<shape type="obj">
+			<string name="filename" value="meshes/teapot_left.obj"/>
+
+			<bsdf type="plastic">
+				<srgb name="diffuseReflectance" value="#ffffff"/>
+				<float name="intIOR" value="1.9"/>
+			</bsdf>
+		</shape>
+
+		<shape type="obj">
+			<string name="filename" value="meshes/teapot_right.obj"/>
+
+			<bsdf type="roughconductor">
+				<string name="material" value="Al"/>
+				<string name="distribution" value="as"/>
+				<float name="alphaU" value="0.05"/>
+				<float name="alphaV" value="0.3"/>
+			</bsdf>
+		</shape>
+
+		<shape type="obj">
+			<string name="filename" value="meshes/teapot_center.obj"/>
+
+			<ref id="glass"/>
+		</shape>
+	</shape>
+	<!--
+    Scene geometry instancess
+    !-->
+
+	<shape type="instance">
+		<ref id="scene"/>
+	</shape>
+	<!-- 	<shape type="obj">
+		<string name="filename" value="meshes/lightcenter.obj"/>
+		<bsdf type="diffuse">
+			<spectrum name="reflectance" value="400:0.4, 500:0.4, 600:0.4, 700:0.4"/>
+		</bsdf>
+
+		<emitter type="area">
+			<spectrum name="radiance" value="120"/>
+		</emitter>
+	</shape> -->
+	<!--yellow-->
+	<!-- 	<shape type="obj">
+		<string name="filename" value="meshes/light_leftback.obj"/>
+		<emitter type="area">
+			<spectrum name="radiance" value="400:0.4, 500:0.4, 550:120, 600:0.4, 700:0.4"/>
+		</emitter>
+	</shape> -->
+	<!--red-->
+
+	<shape type="obj">
+		<string name="filename" value="meshes/light_leftfront.obj"/>
+
+		<emitter type="area">
+			<spectrum name="radiance" value="400:0.4, 600:0.4, 650:120, 700:0.4"/>
+		</emitter>
+	</shape>
+	<!--green-->
+	<!-- 	<shape type="obj">
+		<string name="filename" value="meshes/light_rightback.obj"/>
+		<emitter type="area">
+			<spectrum name="radiance" value="500:0.4, 530:120, 550:0.4, 650:0.4"/>
+		</emitter>
+	</shape> -->
+	<!--blue-->
+	<!-- 	<shape type="obj">
+		<string name="filename" value="meshes/light_rightfront.obj"/>
+		<emitter type="area">
+			<spectrum name="radiance" value="450:0.4, 475:120, 500:0.4, 700:0.4"/>
+		</emitter>
+	</shape> -->
+	<!--studio light bulb-->
+
+	<shape type="obj">
+		<string name="filename" value="meshes/studio_light_bulb.obj"/>
+
+		<emitter type="area">
+			<spectrum name="radiance" value="500"/>
+		</emitter>
+	</shape>
+</scene>
