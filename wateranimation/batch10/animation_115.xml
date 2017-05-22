@@ -59,8 +59,8 @@
 			</rfilter>
 		<string name="componentFormat" value="float32"/></film>
 		
-		<float name="shutterOpen" value="68"/>
-		<float name="shutterClose" value="68"/>
+		<float name="shutterOpen" value="115"/>
+		<float name="shutterClose" value="115"/>
 	</sensor>
 
 	<!--
@@ -293,7 +293,7 @@
 		</shape>
 		
 		<shape type="obj">
-			<string name="filename" value="meshes/water/smallWater_000068.obj"/>
+			<string name="filename" value="meshes/water/smallWater_000115.obj"/>
 			
 			<bsdf type="dielectric">
 				<string name="intIOR" value="water"/>
