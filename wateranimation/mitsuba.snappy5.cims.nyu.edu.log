@@ -23208,3 +23208,39 @@
 2017-05-23 08:17:47 INFO  ren1 [KDTreeBase] Constructing a SAH kd-tree (103788 primitives) ..
 2017-05-23 08:17:48 INFO  ren1 [KDTreeBase] Finished -- took 514 ms.
 2017-05-23 08:17:48 INFO  ren1 [SamplingIntegrator] Starting render job (720x480, 8000 samples, 20 cores, SSE2 enabled) ..
+2017-05-23 09:30:31 INFO  ren1 [RenderJob] Render time: 1.2122h
+2017-05-23 09:30:31 INFO  ren1 [LDRFilm] Writing image to "/home/francisw/qub/scenesNYU/wateranimation/batch18/animation_227.png" ..
+2017-05-23 09:30:32 INFO  main [statistics.cpp:142] Statistics:
+------------------------------------------------------------
+ * Loaded plugins :
+    -  plugins/area.so [Area light]
+    -  plugins/bitmap.so [Bitmap texture]
+    -  plugins/checkerboard.so [Checkerboard texture]
+    -  plugins/conductor.so [Smooth conductor]
+    -  plugins/dielectric.so [Smooth dielectric BSDF]
+    -  plugins/diffuse.so [Smooth diffuse BRDF]
+    -  plugins/gaussian.so [Gaussian reconstruction filter]
+    -  plugins/independent.so [Independent sampler]
+    -  plugins/instance.so [Instanced geometry]
+    -  plugins/lanczos.so [Lanczos Sinc filter]
+    -  plugins/ldrfilm.so [Low dynamic range film]
+    -  plugins/obj.so [OBJ triangle mesh loader]
+    -  plugins/opath.so [Orbifold MI path tracer]
+    -  plugins/perspective.so [Perspective camera]
+    -  plugins/plastic.so [Smooth plastic BRDF]
+    -  plugins/roughconductor.so [Rough conductor BRDF]
+    -  plugins/shapegroup.so [Grouped geometry for instancing]
+
+  * General :
+    -  Normal rays traced : 27.897 G
+    -  Shadow rays traced : 3.685 G
+
+  * Path tracer :
+    -  Average path length : 10.09 (27.90 G / 2.76 G)
+
+  * Texture system :
+    -  Average EWA samples / lookup : 2.04 (112.68 M / 55.21 M)
+    -  Cumulative MIP map memory allocations : 83.633 MiB
+    -  Filtered texture lookups : 14.07 % (872.87 M of 6.20 G)
+    -  Lookups with clamped anisotropy : 0.55 % (4.78 M of 872.87 M)
+------------------------------------------------------------
